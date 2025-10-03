@@ -17,23 +17,24 @@ dotenv.config({ path: "./config/config.env" });
 // Initialize express app
 const app = express();
 
-// Middleware
-app.use(cors({
-    origin: [process.env.FRONTEND_URL],
-    methods: ["GET", "POST", "DELETE", "UPDATE"],
-    credentials: true
-}));
 
-app.use(cookieParser());
+// middleware to parse body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(fileUpload({
     useTempFiles: true,
     tempFileDir: "/temp/"
 }));
 
+//Middleware
+app.use(cors({
+    origin: [process.env.FRONTEND_URL],
+    methods: ["GET", "POST", "DELETE", "UPDATE"],
+    credentials: true
+}));
 // Routes
-app.use("/api/v1/users", userRouter);
+app.use("/api/v1/user", userRouter);
 app.use("/api/v1/application", applicationRouter);
 app.use("/api/v1/job", jobRouter);
 
