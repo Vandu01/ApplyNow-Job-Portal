@@ -19,7 +19,7 @@ const app = express();
 
 
 // middleware to parse body
-app.use(express.json());
+app.use(express.json());//only parses json
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(fileUpload({
@@ -27,12 +27,14 @@ app.use(fileUpload({
     tempFileDir: "/temp/"
 }));
 
-//Middleware
+//Middleware 
+//connected with frontend
 app.use(cors({
     origin: [process.env.FRONTEND_URL],
     methods: ["GET", "POST", "DELETE", "UPDATE"],
     credentials: true
 }));
+
 // Routes
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/application", applicationRouter);
