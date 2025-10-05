@@ -9,15 +9,15 @@ const Footer = () => {
   const { isAuthorized } = useContext(Context);
   return (
     <footer className={isAuthorized ? "footerShow" : "footerHide"}>
-      <div>&copy; All Rights Reserved By CodeWithSahil.</div>
+      <div>&copy; All Rights Reserved By CodeWithVANDANA.</div>
       <div>
-        <Link to={"https://www.linkedin.com/in/sahil-verma-bb95a6279/"} target="_blank">
+        <Link to={"https://www.linkedin.com/in/vandana-verma-96653b291/"} target="_blank">
           <FaLinkedin />
         </Link>
-        <Link to={"https://www.instagram.com/x___sahil_075/"} target="_blank">
+        <Link to={"https://www.instagram.com/xbgxhab/"} target="_blank">
           <RiInstagramFill />
         </Link>
-        <Link to={"https://github.com/sahil-verma665/Job-Portal-Web-app"} target="_blank">
+        <Link to={"https://github.com/Vandu01/ApplyNow-Job-Portal.git"} target="_blank">
           <RiGithubFill />
         </Link>
       </div>

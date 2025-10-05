@@ -12,3 +12,5 @@ router.get('/getuser',isAuthorized,getUser);
 
 
 export default router;
+
+
